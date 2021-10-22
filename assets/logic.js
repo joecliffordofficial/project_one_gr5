@@ -30,7 +30,13 @@ fetch(`https://the-cocktail-db.p.rapidapi.com/filter.php?i=${userInputDrink}`, {
 })
     .then(response => {
         console.log(response);
+        // 1 make a piece of html in the javascript
+        var title = document.createElement('h1')
+        //2 dress up that html how u want give it text and a class name whatever!
+        title.innerHTML = 'TESTING TITLE!!'
+        //3 chuck that html onto the page!!! put it in a blank div already on yourhtml file
+        document.getElementById('putMyStuffHere').appendChild(title)
     })
-    .catch(err => {
+    .catch(err => {``
         console.error(err);
     });
