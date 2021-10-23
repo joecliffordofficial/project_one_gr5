@@ -45,3 +45,4 @@ function giphySearch() {
 }
 
 $("#search-btn").on("click", foodSearch);
+ console.log(foodSearch)
