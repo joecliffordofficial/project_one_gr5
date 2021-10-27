@@ -1,0 +1,14 @@
+.redtest{
+    background-color: #50d1ee;
+}
+.bluetest{
+    
+ background-color: #7beec0;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
