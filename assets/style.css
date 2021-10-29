@@ -3,13 +3,11 @@
     padding: 0;
     margin: 0;
 }
-.header {
-    padding: 20px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: burlywood;
-    color: black;
-}
-.body {
+
+.body header {
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     margin: 0;
 }
@@ -22,10 +20,10 @@
       0px;
     color: black (0, 0%, 100%);
     display: inline-block;
-    font-size: 22px;
-    line-height: 22px;
-    margin: 16px 16px 16px 20px;
-    padding: 14px 34px;
+    font-size: 11px;
+    line-height: 11px;
+    margin: 8px 8px 8px 10px;
+    padding: 7px 17px;
     text-align: center;
     cursor: pointer;
   }
