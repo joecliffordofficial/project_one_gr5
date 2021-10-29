@@ -1,38 +1,32 @@
 .redtest{
-  background-color: #50d1ee;
+    background-color: #50d1ee;
 }
 .bluetest{
-  
-background-color: #7beec0;
+    
+ background-color: #7beec0;
 }
 
 .footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
+.card-text {
+    text-align: left !important;
+}
 .hero-body {
-  background-color: rgba(9, 97, 211, 0.507);
-  
+    background-color: rgba(9, 97, 211, 0.507);
 }
 
-#btn {
-    color:rgb(0, 0, 0);
-    font-weight:bold;
-    padding: 5px 20px; 
-    background: #dbe6e6;
-    border:1px solid #020202;
-    border-radius: 25px;
-    display: inline-block;
-    font-size: 11px;
-    line-height: 11px;
-    margin: 8px 8px 8px 10px;
-    padding: 7px 17px;
-    text-align: center;
-    cursor: pointer;
-  }
-  #btn:hover {
-    background-color: rgb(137, 148, 149);
-  }
+@media only screen and (min-width: 600px) {
+     }
+@media only screen and (min-width: 768px) {
+        }
+@media only screen and (max-width: 425px){
+    
+}
+          
+
+    

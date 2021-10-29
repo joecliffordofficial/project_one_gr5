@@ -144,10 +144,18 @@ var searchHistoryArr = [];
     }
     return (searchHistoryArr = localSearchHistory);
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
   function createHistory() {
     searchHistoryArr.length = 0;
     localStorage.setItem('searchHistory', JSON.stringify(searchHistoryArr));
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
   function clearHistory() {
     $('#clear-button').on('click', function() {
       $('#search-history').empty();
@@ -156,6 +164,10 @@ var searchHistoryArr = [];
       createHistory();
     });
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
   function clickHistory() {
     $('#search-history').on('click', 'li', function() {
       var cityNameHistory = $(this).text();
