@@ -7,7 +7,7 @@ function foodSearch() {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "tasty.p.rapidapi.com",
-            "x-rapidapi-key": "5894992dbamsh2db1d89edad00e1p1111dcjsnc598ed0d5cb0"
+            "x-rapidapi-key": "c7003324e3mshf11e61354db1858p120a22jsna4188addcb2a"
         }
     })
         .then(response => {
@@ -90,25 +90,26 @@ $("#store-btn").on("click", function() {
 $("#search-btn").on("click", foodSearch);
  console.log(foodSearch)
 
-/*
+
 // History stuff!!!
 var searchHistoryArr = [];
+var userInputStorage = $("#searchBar").val()
 
- function storeHistory(citySearchName) {
+ function storeHistory(userInputStorage) {
     var searchHistoryObj = {};
 
     if (searchHistoryArr.length === 0) {
-      searchHistoryObj['city'] = citySearchName;
+      searchHistoryObj['food'] = userInputStorage;
       searchHistoryArr.push(searchHistoryObj);
       localStorage.setItem('searchHistory', JSON.stringify(searchHistoryArr));
     } else {
       var checkHistory = searchHistoryArr.find(
-        ({ city }) => city === citySearchName
+        ({ food }) => food === userInputStorage
       );
 
       if (searchHistoryArr.length < 5) {
         if (checkHistory === undefined) {
-          searchHistoryObj['city'] = citySearchName;
+          searchHistoryObj['food'] = userInputStorage;
           searchHistoryArr.push(searchHistoryObj);
           localStorage.setItem(
             'searchHistory',
@@ -118,7 +119,7 @@ var searchHistoryArr = [];
       } else {
         if (checkHistory === undefined) {
           searchHistoryArr.shift();
-          searchHistoryObj['city'] = citySearchName;
+          searchHistoryObj['food'] = userInputStorage;
           searchHistoryArr.push(searchHistoryObj);
           localStorage.setItem(
             'searchHistory',
@@ -167,9 +168,8 @@ var searchHistoryArr = [];
 
   function clickHistory() {
     $('#search-history').on('click', 'li', function() {
-      var cityNameHistory = $(this).text();
-      getWeather(cityNameHistory);
+      var foodNameHistory = $(this).text();
+      getWeather(foodNameHistory);
     });
-  }
-});
-*/
+  };
+
