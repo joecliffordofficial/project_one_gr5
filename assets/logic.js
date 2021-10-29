@@ -26,6 +26,9 @@ function foodSearch() {
                 if (data.results[searchNumber].cook_time_minutes > 0) {
                     $(".dish-cook-time").text("Cook time: " + data.results[searchNumber].cook_time_minutes + " minutes")
                 } 
+                else {
+                    return
+                }
                 console.log(data.results[searchNumber].instructions[searchNumber].display_text)
                 $(".card-text").empty();
                 for (let i = searchNumber; i < data.results[searchNumber].instructions.length; i++) {
@@ -65,11 +68,11 @@ function giphySearch() {
         });
 }
 
-function storeRecipe() {
+/*function storeRecipe() {
     console.log("button clicking")
     localStorage.setItem(
 // needs to store data from within the card-body class
-}
+}*/
 
 $("#search-btn").on("click", function() {
     foodSearch();
@@ -79,8 +82,8 @@ $("#next-btn").on("click", function(){
         searchNumber++ 
         foodSearch();
 });
-
+/*
 $("#store-btn").on("click", function() {
     storeRecipe();
 });
-
+*/
