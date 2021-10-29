@@ -27,7 +27,7 @@ function foodSearch() {
                     $(".dish-cook-time").text("Cook time: " + data.results[searchNumber].cook_time_minutes + " minutes")
                 } 
                 else {
-                    return
+                    $(".dish-cook-time").text(" ")
                 }
                 console.log(data.results[searchNumber].instructions[searchNumber].display_text)
                 $(".card-text").empty();
@@ -90,7 +90,7 @@ $("#store-btn").on("click", function() {
 $("#search-btn").on("click", foodSearch);
  console.log(foodSearch)
 
-
+/*
 // History stuff!!!
 var searchHistoryArr = [];
 
@@ -172,3 +172,4 @@ var searchHistoryArr = [];
     });
   }
 });
+*/
