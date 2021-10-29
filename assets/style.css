@@ -13,9 +13,9 @@
     width: 100%;
 }
 
+.card-text {
+    text-align: left !important;
+}
 .hero-body {
     background-color: rgba(9, 97, 211, 0.507);
 }
-
-
-
