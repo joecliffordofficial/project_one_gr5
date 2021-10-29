@@ -12,43 +12,23 @@
 <body>
     <div>
         <a href="index.html"><button>Go Back</button></a>
-        <input id="searchBar"  type="text" placeholder="Search..">  <button>Search</button>
+        <input id="searchBar"  type="text" placeholder="Search..">  <button id="search-btn">Search</button>
     </div>
-    <div class="row">
+    <div class="row" id="main-data">
         <div class="box col-6 redtest justify-content-center text-center">
-          Recipe
           <div class="card" style="width: 47rem;margin: auto;">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
-              
-            </div>
-          </div>
-          <div class="card" style="width: 47rem;margin: auto;">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
-            </div>
-          </div>
-          <div class="card" style="width: 47rem;margin: auto;">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
+              <h4 class="card-title"></h4>
+              <h5 class="card-subtitle mb-2 text-muted"></h5>
+              <h6 class="dish-cook-time"></h6>
+              <ol class="card-text"></ol>
+              <br>
+              <button id="store-btn">Store Recipe</button>
+              <button id="next-btn">Next Recipe</button>
             </div>
           </div>
         </div>
-        <div class="box col-6 bluetest">
-          Meme
-
+        <div class="box col-6 bluetest" id="meme-box">
         </div>
    </div>
 

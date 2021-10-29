@@ -12,3 +12,7 @@
     bottom: 0;
     width: 100%;
 }
+
+.card-text {
+    text-align: left !important;
+}
