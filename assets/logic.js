@@ -12,17 +12,16 @@ function foodSearch() {
     })
         .then(response => {
             if (response.status !== 200) {
-                alert("Error, " + response.status) // CHANGE TO POPUP MODAL!!`
+                alert("Error, " + response.status) 
             }
             else {
                 return response.json()
             }
         })
         .then(function (data) {
-            console.log("This is the food search (processed)", data)
+            appendToHistory(data);
                 $(".card-title").text(data.results[searchNumber].name)
                 $(".card-subtitle").text(data.results[searchNumber].description)
-                // Why does this not work?
                 if (data.results[searchNumber].cook_time_minutes > 0) {
                     $(".dish-cook-time").text("Cook time: " + data.results[searchNumber].cook_time_minutes + " minutes")
                 } 
@@ -68,12 +67,6 @@ function giphySearch() {
         });
 }
 
-/*function storeRecipe() {
-    console.log("button clicking")
-    localStorage.setItem(
-// needs to store data from within the card-body class
-}*/
-
 $("#search-btn").on("click", function() {
     foodSearch();
 });
@@ -82,94 +75,66 @@ $("#next-btn").on("click", function(){
         searchNumber++ 
         foodSearch();
 });
-/*
-$("#store-btn").on("click", function() {
-    storeRecipe();
+
+$("#clear-history").on("click", function(){
+    localStorage.clear();
+    $("#search-history-container").empty();
 });
-*/
-$("#search-btn").on("click", foodSearch);
- console.log(foodSearch)
 
+ var searchHistory = []
+ var searchForm = document.querySelector("#searchBar")
+ var searchInput = $("#searchBar").val();
+ var searchHistoryContainer = document.querySelector("#search-history-container")
+ 
+ function renderSearchHistory() {
+     searchHistoryContainer.innerHTML ='';
+     for (var i = searchHistory.length-1; i >= 0; i--) {;
+        var btn = document.createElement('button');
+        btn.setAttribute('type', 'button');
+        btn.classList.add('history-btn','btn-history')
+        btn.setAttribute('data-search', searchHistory[i])
+        btn.textContent = searchHistory[i];
+        searchHistoryContainer.append(btn)
+        console.log("this is searchhistory",searchHistory)
+     }
+ }
 
-// History stuff!!!
-var searchHistoryArr = [];
-var userInputStorage = $("#searchBar").val()
-
- function storeHistory(userInputStorage) {
-    var searchHistoryObj = {};
-
-    if (searchHistoryArr.length === 0) {
-      searchHistoryObj['food'] = userInputStorage;
-      searchHistoryArr.push(searchHistoryObj);
-      localStorage.setItem('searchHistory', JSON.stringify(searchHistoryArr));
-    } else {
-      var checkHistory = searchHistoryArr.find(
-        ({ food }) => food === userInputStorage
-      );
-
-      if (searchHistoryArr.length < 5) {
-        if (checkHistory === undefined) {
-          searchHistoryObj['food'] = userInputStorage;
-          searchHistoryArr.push(searchHistoryObj);
-          localStorage.setItem(
-            'searchHistory',
-            JSON.stringify(searchHistoryArr)
-          );
-        }
-      } else {
-        if (checkHistory === undefined) {
-          searchHistoryArr.shift();
-          searchHistoryObj['food'] = userInputStorage;
-          searchHistoryArr.push(searchHistoryObj);
-          localStorage.setItem(
-            'searchHistory',
-            JSON.stringify(searchHistoryArr)
-          );
-        }
-      }
-    }
-    $('#search-history').empty();
-    displayHistory();
-  }
-
-  function displayHistory() {
-    var getLocalSearchHistory = localStorage.getItem('searchHistory');
-    var localSearchHistory = JSON.parse(getLocalSearchHistory);
-
-    if (getLocalSearchHistory === null) {
-      createHistory();
-      getLocalSearchHistory = localStorage.getItem('searchHistory');
-      localSearchHistory = JSON.parse(getLocalSearchHistory);
-    }
-
-    for (var i = 0; i < localSearchHistory.length; i++) {
-      var historyLi = $('<li>');
-      historyLi.addClass('list-group-item');
-      historyLi.text(localSearchHistory[i].city);
-      $('#search-history').prepend(historyLi);
-      $('#search-history-container').show();
-    }
-    return (searchHistoryArr = localSearchHistory);
-  }
-
-  function createHistory() {
-    searchHistoryArr.length = 0;
-    localStorage.setItem('searchHistory', JSON.stringify(searchHistoryArr));
-  }
-
-  function clearHistory() {
-    $('#clear-button').on('click', function() {
-      $('#search-history').empty();
-      $('#search-history-container').hide();
-      localStorage.removeItem('searchHistory');
-      createHistory();
-    });
-  }
-
-  function clickHistory() {
-    $('#search-history').on('click', 'li', function() {
-      var foodNameHistory = $(this).text();
-      getWeather(foodNameHistory);
-    });
-  };
-
+ function appendToHistory(search) {
+     if(searchHistory.indexOf(search) !==-1){
+         return;
+     }
+     searchHistory.push(search);
+     localStorage.setItem('search-history', JSON.stringify(searchHistory))
+     renderSearchHistory();
+ }
+ 
+ function initSearchHistory() {
+     var storedHistory = localStorage.getItem('search-history');
+     if(storedHistory) {
+         searchHistory = JSON.parse(storedHistory)
+     }
+     renderSearchHistory()
+ }
+ 
+ function handleSearchFormSubmit(x){
+     if(!searchInput.value) {
+         return;
+     }
+     x.preventDefault();
+     var search = userInput.value.trim();
+     foodSearch(search);
+     searchInput.value='';
+ }
+ 
+ function handleSearchHistoryClick(x) {
+     if (!x.target.matches('.btn-history')) {
+         return;
+     }
+     var btn = x.target;
+     var search = btn.getAttribute('data-search');
+     foodSearch(search);
+ }
+ 
+ initSearchHistory();
+ searchForm.addEventListener('submit', handleSearchFormSubmit );
+ searchHistoryContainer.addEventListener('click', handleSearchHistoryClick)
