@@ -18,7 +18,10 @@
 }
 .hero-body {
     background-color: rgba(9, 97, 211, 0.507);
+    text-align: center;
 }
+
+
 
 @media only screen and (min-width: 600px) {
      }
