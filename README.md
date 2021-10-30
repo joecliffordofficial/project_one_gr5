@@ -17,4 +17,6 @@ Check them out here below!
 [GIF's & Grub] ()
 [Repository] (https://github.com/joecliffordofficial/project_one_gr5)
 
-<img src ="./images/">
+<img src ="./assets/images/screenShotOne.png">
+<img src ="./assets/images/screenShotTwo.png">
+<img src ="./assets/images/screenShotThree.png">
