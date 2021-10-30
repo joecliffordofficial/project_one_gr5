@@ -18,8 +18,24 @@
 }
 .hero-body {
     background-color: rgba(9, 97, 211, 0.507);
+    text-align: center;
 }
 
+<<<<<<< HEAD
 .button-hide {
     visibility:hidden;
 }
+=======
+
+
+@media only screen and (min-width: 600px) {
+     }
+@media only screen and (min-width: 768px) {
+        }
+@media only screen and (max-width: 425px){
+    
+}
+          
+
+    
+>>>>>>> main
