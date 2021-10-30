@@ -20,6 +20,7 @@ function foodSearch() {
     })
     .then(function (data) {
       appendToHistory(data);
+      $(".button-hide").css("visibility", "visible")
       $(".card-title").text(data.results[searchNumber].name)
       $(".card-subtitle").text(data.results[searchNumber].description)
       if (data.results[searchNumber].cook_time_minutes > 0) {
@@ -100,7 +101,7 @@ var searchHistoryContainer = document.querySelector("#search-history-container")
 function renderSearchHistory() {
   searchHistoryContainer.innerHTML = '';
   for (var i = searchHistory.length - 1; i >= 0; i--) {
-    var btn = document.createElement('button');
+    var btn = document.createElement("p");
     btn.setAttribute('type', 'button');
     btn.classList.add('history-btn', 'btn-history')
     btn.setAttribute('data-search', searchHistory[i])
@@ -108,13 +109,6 @@ function renderSearchHistory() {
     searchHistoryContainer.append(btn)
   }
 }
-
-function showHistory(data) {
-  // show data corresponding to the parent of .this element
-  console.log($(this))
-}
-
-$(".history-btn").on("click", showHistory)
 
 function appendToHistory(search) {
   if (searchHistory.indexOf(search) !== -1) {

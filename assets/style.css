@@ -19,3 +19,7 @@
 .hero-body {
     background-color: rgba(9, 97, 211, 0.507);
 }
+
+.button-hide {
+    visibility:hidden;
+}
