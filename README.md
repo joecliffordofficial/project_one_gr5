@@ -14,7 +14,10 @@ We've connected you to the Tasty API and the Giphy API to have a little fun whil
 
 Check them out here below!
 
-[GIF's & Grub] ()
-[Repository] (https://github.com/joecliffordofficial/project_one_gr5)
+[GIF's & Grub](https://joecliffordofficial.github.io/project_one_gr5/)
 
-<img src ="./images/">
+[Repository](https://github.com/joecliffordofficial/project_one_gr5)
+
+<img src ="./assets/images/screenShotOne.png">
+<img src ="./assets/images/screenShotTwo.png">
+<img src ="./assets/images/screenShotThree.png">
