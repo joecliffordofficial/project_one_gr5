@@ -12,7 +12,7 @@ Welcome to GIFs and Grub! Search for a type of food you're craving and we will c
 GIF'S!
 We've connected you to the Tasty API and the Giphy API to have a little fun while you cook! 
 
-Check them out here below!
+Check them out here below! Amazing Gifs!
 
 [GIF's & Grub](https://joecliffordofficial.github.io/project_one_gr5/)
 
