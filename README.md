@@ -1,5 +1,21 @@
 # GIF's & Grub
 
+# Team
+
+|Frontend|Backend|
+|-----|-----|
+|Joseph Clifford|Joseph Clifford|
+|Taya Zornes|Taya Zornes|
+|Kiahna Carmack|Kiahna Carmack|
+|Steve  Eiselt|Steve  Eiselt|
+|Daesang Ogle|
+
+# Tools Used:
+- HTML
+- CSS
+- JavaScript
+- tasty.p.rapidapi.com/
+
 # User Story
 
 ```
